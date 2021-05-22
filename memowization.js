@@ -28,11 +28,11 @@ function lucasNumberMemo(n, memo = {}) {
     return memo[n];
 }
 
-console.log(lucasNumberMemo(0))   // => 2
-console.log(lucasNumberMemo(1))  // => 1
-console.log(lucasNumberMemo(40))  // => 228826127
-console.log(lucasNumberMemo(41))  // => 370248451
-console.log(lucasNumberMemo(42))  // => 599074578
+// console.log(lucasNumberMemo(0))   // => 2
+// console.log(lucasNumberMemo(1))  // => 1
+// console.log(lucasNumberMemo(40))  // => 228826127
+// console.log(lucasNumberMemo(41))  // => 370248451
+// console.log(lucasNumberMemo(42))  // => 599074578
 
 /***********************************************************************
 Write a recursive function called `fibonacci` that takes an integer, `n`,
@@ -56,7 +56,11 @@ fastFib(10); // 55
 ***********************************************************************/
 
 function fastFib(n, memo = {}) {
+  if (n in memo) return memo[n];
+  if (n === 1 || n === 2) return 1;
 
+  memo[n] = fastFib(n - 1, memo) + fastFib(n - 2, memo);
+  return memo[n];
 }
 
 console.log(fastFib(1)); // 1
