@@ -1,22 +1,22 @@
 //The Queue is a line, it is first in first out
 class Queue {
     constructor() {
-        this.store = new Array();
+        this.store = new Array(); // creates new array for queue class
     }
     enqueue(val) {
-        this.store.push(val)
-        return true
+        this.store.push(val) // adds element to the back of the array
+        return true // adds functionality to the function, prints a true for success!
     }
     dequeue() {
-        if (!this.store.length) return false;
-        this.store.shift();
-        return true;
+        if (!this.store.length) return false; // adds functionality, returns false if the dequeue can't happen
+        this.store.shift(); // this removes the first element from the array in accordance with the FIFO method
+        return true; // adds functionality
     }
     peek() {
-        return this.store[0];
+        return this.store[0]; // this prints the first element in the array
     }
     size() {
-        return this.store.length;
+        return this.store.length; // prints the size of the array
     }
 }
 
