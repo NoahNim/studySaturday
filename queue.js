@@ -5,10 +5,12 @@ class Queue {
     }
     enqueue(val) {
         this.store.push(val)
-        return this.size();
+        return true
     }
     dequeue() {
-      return  this.store.shift();
+        if (!this.store.length) return false;
+        this.store.shift();
+        return true;
     }
     peek() {
         return this.store[0];
@@ -21,6 +23,7 @@ class Queue {
 let myQQ = new Queue();
 myQQ.enqueue(1);
 myQQ.enqueue(2);
+console.log(myQQ);
 myQQ.dequeue();
 console.log(myQQ);
 console.log(myQQ.size());
